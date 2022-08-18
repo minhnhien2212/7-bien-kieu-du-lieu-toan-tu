@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyen Doi Tien Te</title>
+</head>
+<body>
+    <!--Thiết kế giao diện form-->
+    <form>
+
+        <lable>Amount</lable>
+        <input id="so-tien" type="number"><br><br>
+
+        <label>From Currency</label>
+        <select id="fromCurrency">
+            <option>VND</option>
+            <option>USD</option>
+        </select><br><br>
+
+        <label>To Currency</label>
+        <select id="toCurrency">
+            <option>VND</option>
+            <option>USD</option>
+        </select><br><br>
+
+        <button type="button" onclick="showMessage()">Convert</button>
+        <p id="display"></p>
+
+      </form>
+
+    <!--Lập phép toán Javascript-->
+  <script>
+
+      <!--Gọi tên các biến, lấy id từ code HTML ở trên-->
+    function showMessage () {
+        var amount = document.getElementById('so-tien').value;
+        var fromCurrency = document.getElementById('fromCurrency').value;
+        var toCurrency = document.getElementById('toCurrency').value;
+        var result = null;
+
+        <!--Đưa ra điều kiện: nếu fromCurrency tương đương với toCurrency thì đưa ra hai trường hợp: VND => VND và USD => USD. Sau đó giữ nguyên giá trị đã nhập lúc trước-->
+        if (fromCurrency === toCurrency){
+
+            if (fromCurrency === "VND") {
+
+                result = Number(amount);
+            } else{
+                result = Number(amount);
+            }
+
+        <!--Đưa ra điều kiện: nếu fromCurrency khác với toCurrency thì lại tiếp tục chia ra hai trường hợp-->
+        } else {
+            <!--Trường hợp 1: chuyển từ VND sang USD-->
+            if (fromCurrency === "VND" && toCurrency === "USD") {
+                result = Number(amount) / 23000;
+            <!--Trường hợp 2: chuyển từ USD sang VND-->
+            } else if (fromCurrency === "USD" && toCurrency === "VND") {
+                result = Number(amount) * 23000;
+            }
+        }
+
+        document.getElementById('display').innerText = result;
+
+        }
+  </script>
+</body>
+</html>

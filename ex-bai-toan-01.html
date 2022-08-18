@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tinh diem trung binh Vat ly, Hoa hoc, Sinh hoc</title>
+</head>
+<body>
+<script>
+    inputVatLy = prompt("Nhap diem vat ly");
+    inputHoaHoc = prompt("Nhap diem hoa hoc");
+    inputSinhHoc = prompt("Nhap diem sinh hoc");
+
+    let vatLy = parseInt(inputVatLy);
+    let hoaHoc = parseInt(inputHoaHoc);
+    let sinhHoc = parseInt(inputSinhHoc);
+    let diem = VatLy + HoaHoc + SinhHoc;
+    let diemTb = diem / 3;
+    document.write("Diem Trung Binh La: " + diemTb);
+</script>
+</body>
+</html>

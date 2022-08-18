@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>May tinh cong tru</title>
+</head>
+<body>
+  <form>
+    <input id="soThuNhat" type="number" placeholder="nhap so thu nhat">
+    <input id="soThuHai" type="number" placeholder="nhap so thu hai">
+    <button id="dauCong" type="button" onclick="add()">Cộng</button>
+    <button id="dauTru" type="button" onclick="subtract()">Trừ</button>
+    <h2>Result:</h2>
+    <p id="ketQuaCong"></p>
+    <p id="ketQuaTru"></p>
+
+  </form>
+
+  <script>
+    function
+    add () {
+      var x = document.getElementById('soThuNhat').value;
+      var y = document.getElementById('soThuHai').value;
+      var result = Number(x) + Number(y);
+
+      document.getElementById('ketQuaCong').innerText = result;
+    }
+
+    function
+    subtract () {
+      var x = document.getElementById('soThuNhat').value;
+      var y = document.getElementById('soThuHai').value;
+      var result = Number(x) - Number(y);
+
+      document.getElementById('ketQuaTru').innerText = result;
+    }
+  </script>
+</body>
+</html>
